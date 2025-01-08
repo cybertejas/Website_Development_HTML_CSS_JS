@@ -1,0 +1,12 @@
+h1{
+    color:red;
+}
+
+/* targeting a class  */
+.para{
+    color:blue;
+}
+
+#heading{
+    color:green;
+}

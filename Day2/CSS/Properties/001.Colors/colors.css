@@ -1,0 +1,14 @@
+.paragraph{
+    color:aquamarine;
+    background-color:rgb(62, 61, 107);
+    border:4px solid #4efa23;
+    width:500px;
+    padding:20px;
+    /* color:rgb(2,4,0) */
+}
+
+/* CSS Colors name::after
+1. Color name : Red , blue , yellow , 
+2. Hex value : #0-9 , A-F
+3. RGB - Red Green Blue (0-255, 0-255, 0-255)
+*/
