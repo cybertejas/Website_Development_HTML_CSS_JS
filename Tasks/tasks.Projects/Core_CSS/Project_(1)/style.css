@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    background-color: #202225;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+    gap: 30px;
+}
+
+.rainbow{
+    height: 100px;
+    width:50vh;
+}
+
+
+.violet{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #9400D3;
+}
+
+.indigo{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #4B0082;
+}
+
+.blue{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #0000FF;
+}
+
+.green{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #008000;
+}
+
+.yellow{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #FFFF00;
+}
+
+.orange{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #FFA500;
+}
+
+.red{
+    z-index: 1;
+    transition: ease-in-out .5s;
+    height: 100px;
+    background-color: #FF0000;
+
+}
+
+.colors:hover{
+    transition:ease-in-out .5s;
+    z-index: 100;
+    margin: 10px;
+    filter: blur(50vh);
+    height:115px;
+}
+
+.colors:active{
+    transition:ease-in-out .2s;
+    margin: 10px;
+    z-index: 1;
+    filter: blur(1vh);
+    height:115px;
+}
+
+.colors{
+    z-index: 1;
+    margin: 5px;
+    border-radius: 10px;
+}
