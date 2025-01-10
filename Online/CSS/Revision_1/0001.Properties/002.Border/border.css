@@ -1,0 +1,20 @@
+p{
+
+    border-width:2px;
+    border-style:solid;
+    border-color:brown;
+    /* border-radius:10px; */
+    padding:30px;
+    width:500px;
+
+    /*  */
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+h1{
+    /* border: width style color */
+    /* border:1px solid red;     */
+    border:rgb(69, 41, 41) 3px solid;
+    
+    
+}
