@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    font-weight: bolder;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+    gap: 30px;
+    background-color: ghostwhite;
+}
+
+.cps_1{
+    height:auto;
+    width: 30vh;
+    .navy{
+        background-color: #232855;
+        height: 15vh;
+        border-top-left-radius: 2vh;
+        border-top-right-radius: 2vh;
+    }
+    .teal{
+        background-color: #215B63;
+        height: 9vh;
+    }
+    .green{
+        background-color: #5FCC9C;
+        height: 7vh;
+    }
+    .mint{
+        background-color: #AAFFC7;
+        height: 5vh;
+        border-bottom-left-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+    }
+}
+
+.h1s{
+    margin-bottom: 10vh;
+    font-size: xxx-large;
+}
+
+.cps_2{
+    margin-top: 5vh;
+    height:auto;
+    width: 30vh;
+    .first{
+        background-color: #740938;
+        height: 15vh;
+        border-top-left-radius: 2vh;
+        border-top-right-radius: 2vh;
+    }
+    .second{
+        background-color: #AF1740;
+        height: 9vh;
+    }
+    .third{
+        background-color: #CC2B52;
+        height: 7vh;
+    }
+    .fourth{
+        background-color: #DE7C7D;
+        height: 5vh;
+        border-bottom-left-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+    }
+}
+
+.cps_3{
+    margin-top: 5vh;
+    height:auto;
+    width: 30vh;
+    #first{
+        background-color: #00FF9C;
+        height: 15vh;
+        border-top-left-radius: 2vh;
+        border-top-right-radius: 2vh;
+    }
+    #second{
+        background-color: #B6FFA1;
+        height: 9vh;
+    }
+    #third{
+        background-color: #FEFFA7;
+        height: 7vh;
+    }
+    #fourth{
+        background-color: #FFE700;
+        height: 5vh;
+        border-bottom-left-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+    }
+}
+
+.cps_4{
+    margin-top: 5vh;
+    height:auto;
+    width: 30vh;
+    #firsts{
+        background-color: #6439FF;
+        height: 15vh;
+        border-top-left-radius: 2vh;
+        border-top-right-radius: 2vh;
+    }
+    #seconds{
+        background-color: #4F75FF;
+        height: 9vh;
+    }
+    #thirds{
+        background-color: #00CCDD;
+        height: 7vh;
+    }
+    #fourths{
+        background-color: #7CF5FF;
+        height: 5vh;
+        border-bottom-left-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+    }
+    margin-bottom: 10vh;
+}
