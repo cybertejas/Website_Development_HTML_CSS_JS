@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    font-weight: bolder;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 30px;
+    background-color: ghostwhite;
+}
+
+#title{
+    margin-bottom: 10vh;
+}
+
+.row_1, .row_2, .row_3, .row_4 , .row_5, .row_6, .row_7{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 1vh;
+    margin-bottom: 1vh;
+}
+
+.lanth{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 1vh;
+    margin-bottom: 1vh;
+    margin-top: 6vh;
+}
+
+.actin{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 1vh;
+    margin-bottom: 10vh;
+}
+
+
+.ele {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 8px;
+    color: #202225;
+
+}
+
+
+
+.hydro, .c, .n, .o, .f, .p, .s, .cl, .se, .br, .i{
+    background-color: #7081c4;
+    box-shadow: #7081c4 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.hydro:hover, .c:hover, .n:hover, .o:hover, .f:hover, .p:hover, .s:hover, .cl:hover, .se:hover, .br:hover, .i:hover{
+    box-shadow: #7081c4 0 0 20px 20px;
+}
+
+.heli, .ar, .ne, .kr, .xe, .rn{
+    background-color: #c48283;
+    box-shadow: #c48283 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.heli:hover, .ar:hover, .ne:hover, .kr:hover, .xe:hover, .rn:hover{
+    box-shadow: #c48283 0 0 20px 20px;
+}
+
+.li, .k, .na, .rb, .cs, .fr{
+    background-color: #3caa31;
+    box-shadow: #3caa31 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.li:hover, .k:hover, .na:hover, .rb:hover, .cs:hover, .fr:hover{
+    box-shadow: #3caa31 0 0 20px 20px;
+}
+
+.be, .mg, .ca, .sr, .ba, .ra{
+    background-color: #a53433;
+    box-shadow: #a53433 0 0 0 1px;
+    transition: 0.3s;
+}
+.be:hover, .mg:hover, .ca:hover, .sr:hover, .ba:hover, .ra:hover{
+    box-shadow: #a53433 0 0 20px 20px;
+}
+
+.b, .si, .ge, .as, .sb, .te{
+    background-color: #916c49;
+    box-shadow: #916c49 0 0 0 1px;
+    transition: 0.3s;
+}
+.b:hover, .si:hover, .ge:hover, .as:hover, .sb:hover, .te:hover{
+    box-shadow: #916c49 0 0 20px 20px;
+}
+
+.al, .ga, .in, .sn, .tl, .pb, .bi, .po, .at{
+    background-color: #78914d;
+    box-shadow: #78914d 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.al:hover, .ga:hover, .in:hover, .sn:hover, .tl:hover, .pb:hover, .bi:hover, .po:hover, .at:hover{
+    box-shadow: #78914d 0 0 20px 20px;
+}
+
+.sc, .ti, .v, .cr, .mn, .fe, .co, .ni, .cu, .zn, .y, .zr, .nb, .mo, .tc, .ru, .rh, .pd, .ag, .cd, .hf , .ta, .w, .re, .os, .ir, .pt, .au, .hg, .rf, .db, .sg, .bh, .hs{
+    background-color: #8f5e91;
+    box-shadow: #8f5e91 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.sc:hover, .ti:hover, .v:hover, .cr:hover, .mn:hover, .fe:hover, .co:hover, .ni:hover, .cu:hover, .zn:hover, .y:hover, .zr:hover, .nb:hover, .mo:hover, .tc:hover, .ru:hover, .rh:hover, .pd:hover, .ag:hover, .cd:hover, .hf:hover , .ta:hover, .w:hover, .re:hover, .os:hover, .ir:hover, .pt:hover, .au:hover, .hg:hover, .rf:hover, .db:hover, .sg:hover, .bh:hover, .hs:hover{
+    box-shadow: #8f5e91 0 0 20px 20px;
+}
+
+.la, .ce, .pr, .nd, .pm, .sm , .eu , .gd, .tb, .dy, .ho, .er, .tm, .yb, .lu{
+    background-color: #473eff;
+    box-shadow: #473eff 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.la:hover, .ce:hover, .pr:hover, .nd:hover, .pm:hover, .sm:hover , .eu:hover , .gd:hover, .tb:hover, .dy:hover, .ho:hover, .er:hover, .tm:hover, .yb:hover, .lu:hover{
+    box-shadow: #473eff 0 0 20px 20px;
+}
+
+.ac, .th, .pa, .u , .np, .pu, .am, .cm, .bk, .cf, .es, .fm, .md, .no, .lr{
+    background-color: #ff7900;
+    box-shadow: #ff7900 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.ac:hover, .th:hover, .pa:hover, .u:hover , .np:hover, .pu:hover, .am:hover, .cm:hover, .bk:hover, .cf:hover, .es:hover, .fm:hover, .md:hover, .no:hover, .lr:hover{
+    box-shadow: #ff7900 0 0 20px 20px;
+}
+
+.th{
+    margin-left: 28vh;
+}
+
+.ce{
+    margin-left: 28vh;
+}
+
+.mt, .ds, .rg, .cn, .nh, .fl, .mc, .lv, .ts , .og{
+    background-color: #777776;
+    box-shadow: #777776 0 0 0 1px;
+    transition: 0.3s;
+}
+
+.mt:hover, .ds:hover, .rg:hover, .cn:hover, .nh:hover, .fl:hover, .mc:hover, .lv:hover, .ts:hover , .og:hover{
+    box-shadow: #777776 0 0 20px 20px;
+}
+
+.sc, .y, .la, .ac{
+    margin-right: 10vh;
+}
+
+.be, .mg {
+    margin-right: 60%;
+
+}
+
+
+.hydro{
+    margin-right: 90.5%;
+}
