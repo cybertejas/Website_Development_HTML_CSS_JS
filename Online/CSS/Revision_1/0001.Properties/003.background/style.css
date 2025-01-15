@@ -1,0 +1,27 @@
+.first-para{
+    /* height: */
+    background-image:url('https://t4.ftcdn.net/jpg/07/87/16/69/360_F_787166948_1YEZeLZl8XTsp6OXXK78rovNTNPC6PoC.jpg');
+    height:800px;
+    background-color: aquamarine;
+    /* default value yto repeat in bot xz and y  */
+    background-repeat: repeat;   
+    background-repeat: repeat-x; 
+    background-repeat: repeat-y; 
+    background-repeat: no-repeat;
+    /* background-position: bottom;
+    background-position: top; */
+    background-position: center;
+    /* background-position: left;
+    background-position: right; */
+    background-attachment: fixed;
+    background-attachment: scroll;
+    /* background-size: auto;
+    background-size: contain;
+    background-size: cover;  */
+    /* padding:30px; */
+}
+
+.second-div{
+    background-color:blue;
+    height:300px;
+}
