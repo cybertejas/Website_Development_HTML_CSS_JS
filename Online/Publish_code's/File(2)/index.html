@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team ChronoForce</title>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    body{
+        background: black;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 0;
+    }
+    h1{
+
+        font-size: 5rem;
+
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .neon-text-wrapper {
+        position: relative;
+        cursor: pointer;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .neon-text-wrapper:hover {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .neon-text {
+        font-size: 84px;
+        font-weight: 900;
+        color: black;
+        background: #c2ff00;
+        padding: 8px 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: "Orbitron", serif;
+        clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 80%,
+                95% 100%,
+                0 100%
+        );
+
+    }
+
+    .neon-text {
+        background: #405a2e;
+    }
+
+    .page-number {
+        color: #fff;
+        font-size: 12px;
+        font-family: "Orbitron", serif;
+        padding-top: 8px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        margin-bottom: 8vh;
+    }
+
+</style>
+<div class="title">
+    <div class="container">
+        <h1 class="neon-text" data-value="OUTPLAY THE SPEED">OUTPLAY THE SPEED</h1>
+        <div class="page-number">PAGE 001</div>
+        <video width="320" height="240" controls>
+            <source src="Car_Background.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+<script>
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}[]\|;:'/?";
+
+    let interval = null;
+
+    const animateText = (target) => {
+        let iteration = 0;
+
+        clearInterval(interval);
+
+        interval = setInterval(() => {
+            target.innerText = target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iteration) {
+                        return target.dataset.value[index];
+                    }
+
+                    return letters[Math.floor(Math.random() * 36)];
+                })
+                .join("");
+
+            if (iteration >= target.dataset.value.length) {
+                clearInterval(interval);
+            }
+
+            iteration += 1 / 3;
+        }, 30);
+    };
+
+    window.onload = () => {
+        const heading = document.querySelector("h1");
+        animateText(heading);
+    };
+
+    document.querySelector("h1").onmouseover = event => {
+        animateText(event.target);
+    };
+</script>
+</body>
+</html>
