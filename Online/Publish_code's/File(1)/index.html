@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>F1 Car - Welcomes You!!</title>
+    <title>Document</title>
 </head>
 <body>
 <style>
@@ -16,14 +16,13 @@
 
     body{
         margin: 0;
-        padding:0;
-        box-sizing: border-box;
         color: #eee;
         font-family: 'Ethnocentric Rg', sans-serif;
         font-size: 12px;
         gap: 10px;
         scroll-behavior: smooth;
         background: black;
+        box-sizing: border-box;
     }
     a{
         text-decoration: none;
@@ -31,8 +30,9 @@
     }
     header{
         width: 100%;
+
         margin: auto;
-        height: 60px;
+        height: 30px;
         align-items: center;
         position: fixed;
         z-index: 100;
@@ -47,20 +47,23 @@
     header{
         background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         width: 100%;
-
+        height: 4rem;
     }
-    header nav a{
-        color: rgba(28, 244, 240,0.8);
-        margin: 1.55rem;
-        font-weight: 500;
+    header a{
+        color: cyan;
+        margin: 2rem;
+        font-weight: 700;
         font-size: 1rem;
-        letter-spacing: 0.2rem;
+        transition: .2s ease-in-out;
     }
-    header nav a:hover{
-        /* background-color: rgba(12, 109, 107, 0.8); */
-        color:#ed3e3e;
-        cursor:pointer;
+
+    header a:hover{
+        color: #cc3434;
+        margin: 2rem;
+        font-weight: 700;
+        font-size: 1.2rem;
     }
+
     .content{
         padding: 14%;
         display: flex;
@@ -68,12 +71,12 @@
         text-align: center;
     }
 
-
     p{
         width: 50%;
         font-size: larger;
     }
-    .content{
+
+    #content{
         background-image: url("1214058.png");
         background-position: center;
         background-size: cover;
@@ -82,9 +85,8 @@
         left: 0;
         right: 0;
     }
-    .partial_kala{
-        background: linear-gradient(135deg, rgba(24, 23, 23, 0.5), rgba(255,255,255,0));
-        border: 1px solid rgba(255,255,255,0.18);
+    .alpha_semi_semi_dark_block{
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
         width: auto;
         height: auto;
         padding: 5px;
@@ -108,20 +110,51 @@
         float: right;
         height: 100%;
     }
-    .chronoforce{
-        color:#ed3e3e;
-        font-style: oblique;
-        letter-spacing: 0.2;
-    }
+
     .team{
-        color: rgb(28, 244, 240);
-        font-style: italic;
-        letter-spacing: 0.2;
+        color: cyan;
+        z-index: 100;
+        font-size: 5rem;
+        margin-bottom: 0;
+        transform-style: flat;
+        transition: .2s ease-in-out;
     }
+
+    .chronoforce{
+        color: red;
+        font-size: 1.5rem;
+        letter-spacing: 1.3rem;
+        margin-top: 1px;
+        transition: .2s ease-in-out;
+    }
+
+    .team:hover{
+        color: cyan;
+        z-index: 100;
+        font-size: 6rem;
+        letter-spacing: 1rem;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px cyan, 0 0 30px #acfffd;
+    }
+
+    .chronoforce:hover{
+        color: red;
+        font-size: 2rem;
+        letter-spacing: 2rem;
+        margin-top: 1px;
+        text-shadow: 0 0 10px #ff5358, 0 0 30px #ff000b;
+    }
+
+
+    .h1{
+        display: flex;
+        flex-direction: column;
+    }
+
 </style>
 <div id="content">
-    <div class="partial_kala">
-        <header class="aur_kala">
+    <div class="alpha_semi_semi_dark_block">
+        <header class="alpha_dark_block">
             <nav>
                 <a>Home</a>
                 <a>Contacts</a>
@@ -130,9 +163,9 @@
             </nav>
         </header>
         <figure>
-            <div class="content">
-                <h1> <span class="team">Team</span> </h1>
-                <h4><span class="chronoforce">Chronoforce</span></h4>
+            <div class="content h1">
+                <h1 class="team logo">Team</h1>
+                <h1 class="chronoforce logo">Chronoforce</h1>
             </div>
 
             <div class="content para">
