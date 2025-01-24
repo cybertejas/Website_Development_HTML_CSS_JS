@@ -5,11 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #b1 {
-        }
-    </style>
+    <title>F1 Car - Welcomes You!!</title>
 </head>
 <body>
 <style>
@@ -20,13 +16,14 @@
 
     body{
         margin: 0;
+        padding:0;
+        box-sizing: border-box;
         color: #eee;
         font-family: 'Ethnocentric Rg', sans-serif;
         font-size: 12px;
         gap: 10px;
         scroll-behavior: smooth;
         background: black;
-
     }
     a{
         text-decoration: none;
@@ -34,9 +31,8 @@
     }
     header{
         width: 100%;
-
         margin: auto;
-        height: 30px;
+        height: 60px;
         align-items: center;
         position: fixed;
         z-index: 100;
@@ -53,13 +49,18 @@
         width: 100%;
 
     }
-    header a{
-        color: white;
+    header nav a{
+        color: rgba(28, 244, 240,0.8);
         margin: 1.55rem;
-        font-weight: 800;
-        font-size: 0.55rem;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
     }
-
+    header nav a:hover{
+        /* background-color: rgba(12, 109, 107, 0.8); */
+        color:#ed3e3e;
+        cursor:pointer;
+    }
     .content{
         padding: 14%;
         display: flex;
@@ -67,29 +68,12 @@
         text-align: center;
     }
 
-    /*.c1{*/
-    /*    margin-top: 20%;*/
-    /*}*/
-
-    /*.c2{*/
-    /*    margin-top: 0.0010rem;*/
-    /*}*/
-
-    h1{
-        color: white;
-        font-size: xxx-large;
-    }
 
     p{
         width: 50%;
         font-size: larger;
     }
-
-    .about{
-
-
-    }
-    #content{
+    .content{
         background-image: url("1214058.png");
         background-position: center;
         background-size: cover;
@@ -124,6 +108,16 @@
         float: right;
         height: 100%;
     }
+    .chronoforce{
+        color:#ed3e3e;
+        font-style: oblique;
+        letter-spacing: 0.2;
+    }
+    .team{
+        color: rgb(28, 244, 240);
+        font-style: italic;
+        letter-spacing: 0.2;
+    }
 </style>
 <div id="content">
     <div class="partial_kala">
@@ -136,8 +130,9 @@
             </nav>
         </header>
         <figure>
-            <div class="content h1">
-                <h1>Team Chronoforce</h1>
+            <div class="content">
+                <h1> <span class="team">Team</span> </h1>
+                <h4><span class="chronoforce">Chronoforce</span></h4>
             </div>
 
             <div class="content para">
