@@ -42,6 +42,7 @@
         right: 0;
         left: 0;
         justify-content: center;
+        scroll-behavior: smooth;
     }
 
     header{
@@ -55,6 +56,7 @@
         font-weight: 700;
         font-size: 1rem;
         transition: .2s ease-in-out;
+        scroll-behavior: smooth;
     }
 
     header a:hover{
@@ -62,6 +64,14 @@
         margin: 2rem;
         font-weight: 700;
         font-size: 1.2rem;
+    }
+
+    header a:active{
+        color: #cc3434;
+        margin: 2rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-shadow: 0 0 25px #ff5358, 0 0 20px #ff000b;
     }
 
     .content{
@@ -94,18 +104,25 @@
 
     #about {
         width: 100%;
-        flex-direction: row;
+        flex-direction:row-reverse;
+        height: 100%;
+        overflow: hidden;
     }
 
     .about_h1, .about_para{
         display: flex;
         justify-content: center;
+        align-items: center;
         text-align: center;
-        width: 50%;
+    }
+
+    .about_content{
         height: 100%;
+        overflow: hidden;
     }
 
     .about_img img{
+        display: flex;
         width: 50%;
         float: right;
         height: 100%;
@@ -148,16 +165,16 @@
         display: flex;
         flex-direction: column;
     }
-
+    
 </style>
 <div id="content">
     <div class="alpha_semi_semi_dark_block">
         <header class="alpha_dark_block">
             <nav>
-                <a>Home</a>
-                <a>Contacts</a>
-                <a>Info</a>
-                <a>Merchandise</a>
+                <a onclick="window.location.href='#content'">Home</a>
+                <a onclick="window.location.href='#about'">About</a>
+                <a onclick="window.location.href='#contacts'">Contacts</a>
+
             </nav>
         </header>
         <figure>
@@ -165,7 +182,6 @@
                 <h1 class="team logo">Team</h1>
                 <h1 class="chronoforce logo">Chronoforce</h1>
             </div>
-
             <div class="content para">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dolorem.</p>
             </div>
@@ -187,14 +203,18 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cumque dignissimos natus perferendis reiciendis tempora tempore voluptas. Commodi cum delectus, dignissimos eius, enim exercitationem, hic labore maiores pariatur provident vel voluptatum! Atque consequuntur delectus harum nemo pariatur possimus, voluptate. Alias at distinctio fugiat minima omnis quod repellat repudiandae vitae voluptatem.</p>
         </div>
     </div>
-
-    <!--            <button class="btn_1">click here</button>-->
-    <!--            <button class="btn_2">more info</button>-->
+    <button class="btn_1">click here</button>
+    <button class="btn_2">more info</button>
 </div>
 
-
-
-
+<div id="contacts">
+    <div class="images">
+    <form action="">
+        <label for="email"></label><input type="email" name="email" id="email">
+        <label  for="phone"></label><input type="number" name="phone" id="phone">
+    </form>
+    </div>
+</div>
 
 <script>
 
