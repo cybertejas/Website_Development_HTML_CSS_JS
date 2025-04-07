@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>KvT Chronoforce – Cyber Glitch Realm</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --color-bg:  #0a0000;         /* Darker cyber black */
+            --color-text: #d0d0d0;       /* Off-white for readability */
+            --color-cyan: red;       /* Neon teal */
+            --color-red: cyan;
+            --color-red_as: cyan; /* Vibrant glitch red */
+            --color-magenta: darkred;    /* Neon magenta */
+            --color-card-bg: #1a1a1a;    /* Darker card bg */
+            --color-green: red;      /* Matrix green */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*color:;*/
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-bg);
+            padding: 1rem;
+            text-align: center;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cyan);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-magenta);
+            text-shadow: 0 0 5px var(--color-magenta);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--color-cyan);
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: var(--color-card-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            transition: left 0.3s ease-in-out;
+            z-index: 1002;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        .side-menu a {
+            color: var(--color-cyan);
+            text-decoration: none;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .side-menu a:hover {
+            color: var(--color-magenta);
+            text-shadow: 0 0 5px var(--color-magenta);
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            font-size: 1.5rem;
+            color: var(--color-cyan);
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Binary Rain Canvas */
+        #c {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 1s;
+        }
+
+
+        /* Scanlines */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 2px,
+                    transparent 4px
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.15;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .glitch-text {
+            position: relative;
+            font-size: 6rem;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+            color: var(--color-cyan);
+            animation: glitch-skew 5s infinite;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch-text::before {
+            color: var(--color-red);
+            left: 1px;
+            animation: glitch-clip-1 5s infinite linear alternate-reverse;
+            clip-path: inset(40% 0 0 0);
+        }
+        .glitch-text::after {
+            color: var(--color-cyan);
+            left: -1px;
+            animation: glitch-clip-2 6s infinite linear alternate-reverse;
+            clip-path: inset(0 0 60% 0);
+        }
+
+        @keyframes glitch-skew {
+            0%, 100% { transform: skew(0deg); }
+            10% { transform: skew(1deg); }
+            20% { transform: skew(-1deg); }
+        }
+        @keyframes glitch-clip-1 {
+            0% { clip-path: inset(10% 0 0 0); transform: translateX(1px); }
+            50% { clip-path: inset(40% 0 20% 0); transform: translateX(-1px); }
+            100% { clip-path: inset(0 0 50% 0); }
+        }
+        @keyframes glitch-clip-2 {
+            0% { clip-path: inset(0 0 20% 0); transform: translateX(-1px); }
+            50% { clip-path: inset(30% 0 0 0); transform: translateX(1px); }
+            100% { clip-path: inset(60% 0 0 0); }
+        }
+
+        .button-glitch {
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            border: 2px solid var(--color-cyan);
+            background: transparent;
+            color: var(--color-cyan);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .button-glitch:hover {
+            color: var(--color-bg);
+            background: var(--color-magenta);
+            box-shadow: 0 0 15px var(--color-magenta);
+        }
+        .button-glitch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--color-cyan);
+            opacity: 0.3;
+            transition: all 0.5s;
+        }
+        .button-glitch:hover::before {
+            left: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 1rem;
+            color: var(--color-cyan);
+            opacity: 0.8;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        /* Content Section */
+        .content {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border: 1px solid var(--color-cyan);
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card:hover {
+            box-shadow: 0 0 20px var(--color-magenta);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--color-text);
+            position: relative;
+            animation: glitch-skew 5s infinite;
+        }
+        .card-title::before,
+        .card-title::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .card-title::before {
+            color: var(--color-cyan);
+            left: 1px;
+            animation: glitch-clip-1 5s infinite linear alternate-reverse;
+            clip-path: inset(20% 0 0 0);
+        }
+        .card-title::after {
+            color: var(--color-red);
+            left: -1px;
+            animation: glitch-clip-2 6s infinite linear alternate-reverse;
+            clip-path: inset(0 0 40% 0);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+        }
+        .timeline h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--color-magenta);
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid var(--color-cyan);
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--color-red);
+            border-radius: 50%;
+        }
+        .timeline-item h3 {
+            color: var(--color-cyan);
+            font-size: 1.5rem;
+        }
+
+        /* New Sections */
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        h2.glitch-text {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-cyan);
+            color: var(--color-text);
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-form button {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 2px solid var(--color-cyan);
+            color: var(--color-text);
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 150px;
+            margin: 0 auto;
+        }
+        .contact-form button:hover {
+            background: var(--color-magenta);
+            color: var(--color-bg);
+            box-shadow: 0 0 10px var(--color-magenta);
+        }
+    </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<nav>
+    <div class="hamburger">☰</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="side-menu">
+        <div class="close-btn">✖</div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="matrix-bg"></div>
+<div class="scanlines"></div>
+
+<!-- Home Section -->
+<section id="home" class="hero">
+    <h1 class="glitch-text" data-text="KvT Chronoforce">KvT Chronoforce</h1>
+    <p class="typing-text" data-text="Accessing the Grid...">Accessing the Grid...</p>
+    <button class="button-glitch" id="scrollBtn" role="button" aria-label="Enter the Glitch">Hack the System</button>
+    <div class="scroll-indicator" id="scrollIndicator" tabindex="0" role="button" aria-label="Scroll Down">▼ Dive In ▼</div>
+</section>
+
+<!-- Content Section -->
+<section class="content" id="contentSection">
+    <h2 class="glitch-text" data-text="Glitched Reality">Glitched Reality</h2>
+    <p>In the year 2087, KvT Chronoforce emerged from the ashes of a collapsed grid, fusing quantum tech with high-octane racing to defy the laws of physics.</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h3 class="card-title" data-text="Quantum Drift">Quantum Drift</h3>
+            <p>Harness chronoshift engines to warp time mid-race, leaving rivals in a temporal blur.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-title" data-text="Neon Syndicate">Neon Syndicate</h3>
+            <p>A rogue collective of hackers and racers, rewriting the rules of the underground circuit.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-title" data-text="Grid Collapse">Grid Collapse</h3>
+            <p>The day the old world fell, and the Chronoforce rose—powered by stolen megacorp tech.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-title" data-text="Cyber Augments">Cyber Augments</h3>
+            <p>Pilots enhanced with neural implants, synced to machines in a glitch-ridden symbiosis.</p>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline">
+        <h2>Chronoforce Timeline</h2>
+        <div class="timeline-item">
+            <h3>2075 - The Great Crash</h3>
+            <p>Global networks fail, plunging cities into chaos. The underground racing scene thrives.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>2080 - Quantum Breakthrough</h3>
+            <p>Stolen blueprints yield the first chronoshift engine, bending time on the track.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>2087 - Chronoforce Rises</h3>
+            <p>KvT unites the Neon Syndicate, launching a rebellion against corporate overlords.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2 class="glitch-text" data-text="About KvT Chronoforce">About KvT Chronoforce</h2>
+    <p>KvT Chronoforce is a revolutionary force born in the neon-lit underbelly of a dystopian future. We blend cutting-edge quantum technology with the raw adrenaline of underground racing, pushing the boundaries of reality itself.</p>
+    <p>Founded by a group of rogue engineers and racers, KvT Chronoforce seeks to challenge the oppressive megacorporations that dominate the world in 2087. Our mission is to reclaim the grid, one race at a time, using stolen tech to outpace and outsmart our enemies.</p>
+    <p>Our chronoshift engines, a marvel of quantum engineering, allow our pilots to manipulate time on the track, creating opportunities for impossible maneuvers. This technology, combined with our cybernetic enhancements, makes us a formidable force in the underground racing scene.</p>
+    <p>Our team consists of the best pilots and engineers from across the grid, each bringing unique skills and expertise to the table. From former corporate scientists to street-smart hackers, our diverse crew is united by a common goal: to win races and topple the megacorps.</p>
+    <p>With our state-of-the-art facilities hidden deep within the urban sprawl, we develop and test our technology away from prying eyes. Our chronoshift engines are constantly being refined, pushing the limits of what's possible in racing and beyond.</p>
+    <p>One of our most groundbreaking technologies is the Quantum Flux Capacitor, which allows our vehicles to phase through solid objects for brief periods, giving us a tactical advantage in tight races.</p>
+    <p>Our pilots undergo rigorous training in virtual reality simulations, honing their skills in environments that mimic the most challenging tracks in the grid.</p>
+    <p>KvT Chronoforce has won numerous underground racing championships, including the coveted Neon Cup, solidifying our reputation as the top racing team in the dystopian underworld.</p>
+    <p>Join us in the fight for freedom, where every race is a step toward dismantling the corporate stranglehold on humanity. KvT Chronoforce isn’t just a team—it’s a movement.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2 class="glitch-text" data-text="Contact Us">Contact Us</h2>
+    <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="subject" placeholder="Subject" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const sideMenu = document.querySelector('.side-menu');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    });
+
+    document.querySelectorAll('.side-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+        });
+    });
+
+    // Smooth Scroll
+    const scrollBtn = document.getElementById('scrollBtn');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    const contentSection = document.getElementById('contentSection');
+
+    function scrollToContent() {
+        contentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    scrollBtn.addEventListener('click', scrollToContent);
+    scrollIndicator.addEventListener('click', scrollToContent);
+    scrollIndicator.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') scrollToContent();
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Card Reveal
+    const cards = document.querySelectorAll('.card');
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    cards.forEach(card => observer.observe(card));
+
+    // Typing Effect
+    const typingText = document.querySelector('.typing-text');
+    const text = typingText.getAttribute('data-text');
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            typingText.textContent = text.slice(0, i + 1);
+            i++;
+            setTimeout(type, 100);
+        }
+    }
+    type();
+
+    // Controlled Screen Shake (Subtle)
+    function shakeScreen() {
+        document.body.style.transform = `translate(${Math.random() * 2 - 1}px, ${Math.random() * 2 - 1}px)`;
+        setTimeout(() => {
+            document.body.style.transform = 'translate(0, 0)';
+            setTimeout(shakeScreen, 5000);
+        }, 50);
+    }
+    shakeScreen();
+
+    // Binary Rain Effect
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+    var binary = "01";
+    binary = binary.split("");
+    var font_size = 10;
+    var columns = c.width / font_size;
+    var drops = [];
+    for (var x = 0; x < columns; x++) drops[x] = 1;
+    function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.fillStyle = "red";
+        ctx.font = font_size + "px poppins";
+        for (var i = 0; i < drops.length; i++) {
+            var text = binary[Math.floor(Math.random() * binary.length)];
+            ctx.fillText(text, i * font_size, drops[i] * font_size);
+            if (drops[i] * font_size > c.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }
+
+    var interval = setInterval(draw, 22);
+    setTimeout(function() {
+        setTimeout(function() {
+            c.style.display = '';
+        }, 1000);
+    }, 5000);
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        const emailBody = `Name: ${name}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:kvt.productions.official@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        window.location.href = mailtoLink;
+    });
+</script>
+</body>
+</html>
