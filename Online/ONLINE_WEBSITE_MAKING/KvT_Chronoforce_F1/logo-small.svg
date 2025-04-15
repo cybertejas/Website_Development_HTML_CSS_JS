@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="297mm" height="210mm" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 29700 21000"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID2" horiz-adv-x="444" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Jersey 15">
+		<font-face-src>
+			<font-face-name name="Jersey 15 Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="S" horiz-adv-x="481" d="M74 74l-37 0 0 111 111 0 0 -37 37 0 0 -37 111 0 0 37 37 0 0 37 -37 0 0 37 -185 0 0 37 -37 0 0 37 -37 0 0 185 37 0 0 38 37 0 0 37 259 0 0 -37 37 0 0 -38 37 0 0 -111 -111 0 0 37 -37 0 0 37 -111 0 0 -37 -37 0 0 -37 37 0 0 -37 185 0 0 -37 37 0 0 -37 37 0 0 -185 -37 0 0 -37 -37 0 0 -37 -259 0 0 37 -37 0 0 37z"/>
+   <glyph unicode="V" horiz-adv-x="444" d="M111 111l-37 0 0 37 -37 0 0 408 111 0 0 -371 37 0 0 -37 74 0 0 37 37 0 0 371 111 0 0 -408 -37 0 0 -37 -37 0 0 -37 -37 0 0 -37 -37 0 0 -37 -74 0 0 37 -37 0 0 37 -37 0 0 37z"/>
+   <glyph unicode="X" horiz-adv-x="444" d="M37 185l37 0 0 37 37 0 0 37 37 0 0 37 -37 0 0 37 -37 0 0 37 -37 0 0 186 111 0 0 -149 37 0 0 -37 74 0 0 37 37 0 0 149 111 0 0 -186 -37 0 0 -37 -37 0 0 -37 -37 0 0 -37 37 0 0 -37 37 0 0 -37 37 0 0 -185 -111 0 0 148 -37 0 0 37 -74 0 0 -37 -37 0 0 -148 -111 0 0 185z"/>
+   <glyph unicode="™" horiz-adv-x="1036" d="M593 333l-37.01 0 0 -333 -112 0 0 556 112 0 0 -37 37.01 0 0 -38.01 37 0 0 -37 37 0 0 -37.01 37.01 0 0 -37 37 0 0 37 37.01 0 0 37.01 37 0 0 37 37 0 0 38.01 37.01 0 0 37 111 0 0 -556 -111 0 0 333 -37.01 0 0 -37.01 -37 0 0 -37 -37 0 0 -37.01 -37.01 0 0 -37 -37 0 0 37 -37.01 0 0 37.01 -37 0 0 37 -37 0 0 37.01zm-556.01 223l333 0 0 -112 -111 0 0 -444 -111 0 0 444 -111.01 0 0 112z"/>
+  </font>
+  <font id="FontID1" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Times">
+		<font-face-src>
+			<font-face-name name="Times Roman"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="Δ" horiz-adv-x="722" d="M351 700l20 0 323 -700 -666 0 323 700zm-251 -658l456 0 -228 497 -228 -497z"/>
+  </font>
+  <font id="FontID0" horiz-adv-x="666" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Helvetica">
+		<font-face-src>
+			<font-face-name name="Helvetica"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="K" horiz-adv-x="666" d="M76 717l95 0 0 -349 350 349 134 0 -299 -289 307 -428 -126 0 -251 360 -115 -110 0 -250 -95 0 0 717z"/>
+   <glyph unicode="T" horiz-adv-x="610" d="M598 717l0 -85 -242 0 0 -632 -98 0 0 632 -242 0 0 85 582 0z"/>
+   <glyph unicode="v" horiz-adv-x="500" d="M107 523l140 -426 146 426 96 0 -197 -523 -94 0 -193 523 102 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Jersey 15";font-variant:normal;font-weight:normal;src:url("#FontID2") format(svg)}
+    @font-face { font-family:"Times";font-variant:normal;font-weight:normal;src:url("#FontID1") format(svg)}
+    @font-face { font-family:"Helvetica";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#E63B25}
+    .fil1 {fill:white}
+    .fnt3 {font-weight:normal;font-size:1089.57px;font-family:'Jersey 15'}
+    .fnt1 {font-weight:normal;font-size:4047.93px;font-family:'Times'}
+    .fnt2 {font-weight:normal;font-size:4626.15px;font-family:'Jersey 15'}
+    .fnt0 {font-weight:normal;font-size:10408.97px;font-family:'Helvetica'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <text x="-361.1" y="15072.53"  class="fil0 fnt0">KvT </text>
+  <text x="19026.24" y="10294.42"  class="fil1 fnt1">Δ</text>
+  <text x="21949.52" y="10294.42"  class="fil1 fnt2">SVX</text>
+  <text x="28501.8" y="8357.07"  class="fil1 fnt3">™</text>
+ </g>
+</svg>
